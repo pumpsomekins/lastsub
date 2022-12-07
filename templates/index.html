@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Project Deployment</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body style="background: #000;">
+ <div class="login">
+	<h1>Crime Type Detection</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="one" placeholder="LONGITUDE" required="required" /> 
+      <input type="text" name="two" placeholder="SHIFT" required="required" />
+      <input type="text" name="three" placeholder="DISTRICT" required="required" />
+      <input type="text" name="four" placeholder="YEAR" required="required" />
+      <input type="text" name="five" placeholder="LATITUDE" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict type of crime</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h2>Crime Table for values</h2>
+
+<table style="width:100%">
+  <tr>
+    <th>Crime Value</th>
+    <th>Crime Type</th>
+  </tr>
+  <tr>
+    <td>0</td>
+    <td>homicide</td>
+  </tr>
+  <tr>
+   	<td>1</td>
+    <td>theft f/auto</td>
+  </tr>
+  <tr>
+   	<td>2</td>
+    <td>motor vehicle theft</td>
+  </tr>
+  <tr>
+   	<td>3</td>
+    <td>theft/other</td>
+  </tr>
+  <tr>
+   	<td>4</td>
+    <td>assault w/dangerous weapon</td>
+  </tr>
+  <tr>
+   	<td>5</td>
+    <td>robbery</td>
+  </tr>
+  <tr>
+   	<td>6</td>
+    <td>burglary</td>
+  </tr>
+  <tr>
+   	<td>7</td>
+    <td>sex abuse</td>
+  </tr>
+  <tr>
+   	<td>8</td>
+    <td>arson</td>
+  </tr>
+</table>
+
+</body>
+</html>
